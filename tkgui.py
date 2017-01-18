@@ -48,7 +48,7 @@ class EZTVScrapper(Tk):
         self.create_log_box()
 
         self.logger.info("loading database...")
-        self.db = MessagePackStorage('tiny.bz2msgpack')
+        self.db = MessagePackStorage('eztv.bz2msgpack')
 
         self.load_favorites()
 
@@ -760,3 +760,7 @@ class LogHandler(logging.StreamHandler):
         self.widget.see(tk.END)  # Scroll to the bottom
         self.widget.config(state="disabled")
         self.widget.update()  # Refresh the widget
+
+if __name__ == '__main__':
+    root = EZTVScrapper()
+    root.mainloop()
